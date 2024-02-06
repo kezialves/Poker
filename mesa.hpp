@@ -20,31 +20,31 @@ class Mesa {
     Rodada rodada;
     int aposta;
 
-    public:
-        // Construtor padrão de Mesa
-        Mesa();
-        // Destrutor virtual de Mesa
-        virtual ~Mesa();
+public:
+    // Construtor padrão de Mesa
+    Mesa();
+    // Destrutor virtual de Mesa
+    virtual ~Mesa();
 
-        // Iterador das cartas
-        typedef vector<Carta*>::iterator CartaIterador;
-        CartaIterador cartasInicio();
-        CartaIterador cartasFim();
+    // Iterador das cartas
+    typedef vector<Carta*>::iterator CartaIterador;
+    CartaIterador cartasInicio();
+    CartaIterador cartasFim();
 
-        // Iterador dos jogadores
-        typedef vector<Jogador*>::iterator JogadorIterador;
-        JogadorIterador jogadoresInicio();
-        JogadorIterador jogadoresFim();
+    // Iterador dos jogadores
+    typedef vector<Jogador*>::iterator JogadorIterador;
+    JogadorIterador jogadoresInicio();
+    JogadorIterador jogadoresFim();
 
-        // Getter da rodada
-        Rodada getRodada() const;
-        // Setter da rodada
-        bool setRodada(Rodada*);
+    // Getter da rodada
+    Rodada getRodada() const;
+    // Setter da rodada
+    bool setRodada(Rodada*);
 
-        // Getter da aposta
-        int getAposta() const;
-        // Setter da aposta
-        bool setAposta(int);
+    // Getter da aposta
+    int getAposta() const;
+    // Setter da aposta
+    bool setAposta(int);
 };
 
 #endif

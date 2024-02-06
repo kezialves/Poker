@@ -18,56 +18,62 @@ class Jogador {
     string nome;
     int socket;
     vector<Carta*> cartas;
-    int pontos;
+    int pontos = 0;
     Status status;
+    char* buffer;
 
-    public:
-        // Construtor padrão de Jogador
-        Jogador();
-        // Construtor de Jogador com ID, nome, socket e pontos
-        Jogador(int, string, int, int);
-        // Destrutor virtual de Jogador
-        virtual ~Jogador();
+public:
+    // Construtor padrão de Jogador
+    Jogador();
+    // Construtor de Jogador com buffer, ID, nome e socket
+    Jogador(char*, int, string, int);
+    // Destrutor virtual de Jogador
+    virtual ~Jogador();
 
-        // Getter do ID
-        int getID() const;
-        // Setter do ID
-        bool setID(int);
+    // Getter do ID
+    int getID() const;
+    // Setter do ID
+    bool setID(int);
 
-        // Getter do nome
-        string getNome() const;
-        // Setter do nome
-        bool setNome(string);
+    // Getter do nome
+    string getNome() const;
+    // Setter do nome
+    bool setNome(string);
 
-        // Getter do socket
-        int getSocket() const;
-        // Setter do socket
-        bool setSocket(int);
+    // Getter do socket
+    int getSocket() const;
+    // Setter do socket
+    bool setSocket(int);
 
-        // Getter dos pontos
-        int getPontos() const;
-        // Setter dos pontos
-        bool setPontos(int);
+    // Getter dos pontos
+    int getPontos() const;
+    // Setter dos pontos
+    bool setPontos(int);
 
-        // Getter do status
-        Status getStatus() const;
-        // Setter do status
-        bool setStatus(Status*);
+    // Getter do status
+    Status getStatus() const;
+    // Setter do status
+    bool setStatus(Status*);
 
-        // Adiciona uma carta à mão
-        bool adicionaCarta(Carta*);
+    // Getter do buffer
+    char* getBuffer() const;
+    // Setter do buffer
+    bool setBuffer(char*);
 
-        // Desiste da rodada
-        bool fold();
+    // Adiciona uma carta à mão
+    bool adicionaCarta(Carta*);
 
-        // Pula a ação para ver a próxima carta
-        bool check(vector<Carta*>);
+    // Desiste da rodada
+    bool fold();
 
-        // Aceita aposta de outro jogador
-        bool call(vector<Carta*>);
+    // Pula a ação para ver a próxima carta
+    bool check(vector<Carta*>);
 
-        // Aposta
-        bool bet(vector<Carta*>);
+    // Aceita aposta de outro jogador
+    bool call(vector<Carta*>);
+
+    // Aposta
+    bool bet(vector<Carta*>);
 };
 
 #endif

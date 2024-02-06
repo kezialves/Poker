@@ -4,8 +4,8 @@
 
 Jogador::Jogador(){};
 
-Jogador::Jogador(int id, string nome, int socket, int pontos):
-    id(id), nome(nome), socket(socket), pontos(pontos){}
+Jogador::Jogador(char* buffer, int id, string nome, int socket):
+    buffer(buffer), id(id), nome(nome), socket(socket){}
 
 Jogador::~Jogador(){};
 
@@ -53,6 +53,15 @@ Status Jogador::getStatus() const {
 
 bool Jogador::setStatus(Status* status) {
     this->status = *status;
+    return true;
+}
+
+char* Jogador::getBuffer() const {
+    return buffer;
+}
+
+bool Jogador::setBuffer(char* buffer) {
+    this->buffer = buffer;
     return true;
 }
 
